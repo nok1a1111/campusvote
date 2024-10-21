@@ -1,7 +1,7 @@
 export async function onRequest(context) {
     const { request } = context;
 
-    if (request.url.endsWith('/count')) {
+    if (request.url.endsWith('/vote')) {
         // Workersのエンドポイントにリダイレクト
         const newUrl = new URL(request.url);
         newUrl.hostname = 'campus-vote.urlcom1111.workers.dev/'; // ここにWorkersのサブドメインを設定
