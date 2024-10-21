@@ -14,10 +14,7 @@ async function updateVotes() {
     const cities = ['ikebukuro', 'tachikawa', 'machida', 'musashisakai'];
     for (const city of cities) {
         const res=await fetch(`/vote/${city}`)
-            .then(res=>res.text()).then()
-            .then(votes=>{document.getElementById(`${city}-votes`).innerText=votes});
-
-        await console.log(res)
+            .then(res=>{console.log(res);return res.text()})
     }
 }
 
