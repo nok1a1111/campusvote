@@ -16,6 +16,8 @@ async function updateVotes() {
         const res=await fetch(`/vote/${city}`)
             .then(res=>res.text()).then()
             .then(votes=>{document.getElementById(`${city}-votes`).innerText=votes});
+
+        await console.log(res)
     }
 }
 
