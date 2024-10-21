@@ -2,10 +2,11 @@ document.querySelectorAll('.vote-btn').forEach(button => {
     button.addEventListener('click', async () => {
         const city = button.classList[0].split('-')[0]
 
-        const response = await fetch(`/vote/${city}`, { method: 'POST' })
-        const newVotes = await response.text()
+        const response = await fetch(`/vote/${city}`, { method: 'POST' });
+        const newVotes = await response.text();
+        console.log(`Received votes: ${newVotes}`); // デバッグ用
+        document.getElementById(`${city}-votes`).innerText = newVotes;
 
-        document.getElementById(`${city}-votes`).innerText = newVotes
     });
 });
 
