@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>campus vote</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .cblock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-position: center;
+            background-size: 100% 100%;
+            background-color: #575757;
+            position: relative;
+            overflow: hidden;
+            transition: background-size 1s ease;
+        }
+
+        .cblock:hover {
+            background-size: 110%;
+        }
+
+        /*
+        .ikebukuro {
+            background-image: url("./campus/ikebukuro.jpg");
+        }
+
+        .tachikawa {
+            background-image: url("./campus/tachikawa.jpg");
+        }
+
+        .machida {
+            background-image: url("./campus/machida.jpg");
+        }
+
+        .musashisakai {
+            background-image: url("./campus/musashisakai.jpg");
+        }*/
+
+        .ikebukuro-btn {
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        .tachikawa-btn {
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        .machida-btn {
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        .musashisakai-btn {
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        .text-above {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .vote-info {
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        button {
+            border-radius: 10px;
+            padding: 15px 35px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid">
+        <div class="cblock ikebukuro">
+            <h1 class="text-above">ikebukuro</h1>
+            <button class="ikebukuro-btn vote-btn">Vote</button>
+            <h1 class="vote-info"><span id="ikebukuro-votes">0</span> Votes</h1>
+        </div>
+        <div class="cblock tachikawa">
+            <h1 class="text-above">tachikawa</h1>
+            <button class="tachikawa-btn vote-btn">Vote</button>
+            <h1 class="vote-info"><span id="tachikawa-votes">0</span> Votes</h1>
+        </div>
+        <div class="cblock machida">
+            <h1 class="text-above">machida</h1>
+            <button class="machida-btn vote-btn">Vote</button>
+            <h1 class="vote-info"><span id="machida-votes">0</span> Votes</h1>
+        </div>
+        <div class="cblock musashisakai">
+            <h1 class="text-above">musashisakai</h1>
+            <button class="musashisakai-btn vote-btn">Vote</button>
+            <h1 class="vote-info"><span id="musashisakai-votes">0</span> Votes</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
