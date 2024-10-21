@@ -11,12 +11,14 @@ document.querySelectorAll('.vote-btn').forEach(button => {
 });
 
 async function updateVotes() {
-    const cities = ['ikebukuro', 'tachikawa', 'machida', 'musashisakai']
+    const cities = ['ikebukuro', 'tachikawa', 'machida', 'musashisakai'];
     for (const city of cities) {
-        const response = await fetch(`/vote/${city}`)
-        const votes = await response.text()
-        document.getElementById(`${city}-votes`).innerText = votes
+        const response = await fetch(`/vote/${city}`);
+        const votes = await response.text();
+        console.log(`Votes for ${city}: ${votes}`); // デバッグ用
+        document.getElementById(`${city}-votes`).innerText = votes;
     }
 }
+
 
 updateVotes();
