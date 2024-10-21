@@ -4,7 +4,7 @@ document.querySelectorAll('.vote-btn').forEach(button => {
 
         const response = await fetch(`/vote/${city}`, { method: 'POST' });
         const newVotes = await response.text();
-        console.log(`Received votes: ${newVotes}`); // デバッグ用
+
         document.getElementById(`${city}-votes`).innerText = newVotes;
 
     });
@@ -15,7 +15,7 @@ async function updateVotes() {
     for (const city of cities) {
         const response = await fetch(`/vote/${city}`);
         const votes = await response.text();
-        console.log(`Votes for ${city}: ${votes}`); // デバッグ用
+
         document.getElementById(`${city}-votes`).innerText = votes;
     }
 }
