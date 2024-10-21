@@ -3,8 +3,9 @@ document.querySelectorAll('.vote-btn').forEach(button => {
         const city = button.classList[0].split('-')[0]
 
         const response = await fetch(`/vote/${city}`, { method: 'POST' });
+        console.log(response)
         const newVotes = await response.text();
-
+        console.log(newVotes)
         document.getElementById(`${city}-votes`).innerText = newVotes;
 
     });
