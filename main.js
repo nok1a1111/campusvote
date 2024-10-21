@@ -13,10 +13,9 @@ document.querySelectorAll('.vote-btn').forEach(button => {
 async function updateVotes() {
     const cities = ['ikebukuro', 'tachikawa', 'machida', 'musashisakai'];
     for (const city of cities) {
-        const response = await fetch(`/vote/${city}`);
-        const votes = await response.text();
-
-        document.getElementById(`${city}-votes`).innerText = votes;
+        const res=await fetch(`/vote/${city}`)
+            .then(res=>res.text()).then()
+            .then(votes=>{document.getElementById(`${city}-votes`).innerText=votes});
     }
 }
 
